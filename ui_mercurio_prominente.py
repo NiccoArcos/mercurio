@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfazpeHRMu.ui'
+## Form generated from reading UI file 'interfazXwMyWO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -16,9 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLayout, QMainWindow, QProgressBar,
-    QPushButton, QSizePolicy, QStackedWidget, QStatusBar,
-    QVBoxLayout, QWidget)
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QStackedWidget, QStatusBar, QVBoxLayout, QWidget)
 import imagenes
 import iconos
 
@@ -26,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(844, 644)
+        MainWindow.resize(925, 717)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -44,8 +43,11 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#widget_7{\n"
-"	background-color: #025a7d;\n"
-"	border-radius:20px;\n"
+"	border: solid #8f8f91;\n"
+"    border-radius: 20px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #fcc253 stop: 1 #ddebdd);\n"
+"\n"
 "}	\n"
 "\n"
 "#enviado_con_exito{\n"
@@ -277,49 +279,65 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.widget_7.sizePolicy().hasHeightForWidth())
         self.widget_7.setSizePolicy(sizePolicy2)
         self.widget_7.setMinimumSize(QSize(0, 350))
-        self.widget_7.setMaximumSize(QSize(0, 0))
-        self.verticalLayout_5 = QVBoxLayout(self.widget_7)
-        self.verticalLayout_5.setSpacing(9)
+        self.widget_7.setMaximumSize(QSize(0, 300))
+        self.horizontalLayout_5 = QHBoxLayout(self.widget_7)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 200)
+        self.widget_2 = QWidget(self.widget_7)
+        self.widget_2.setObjectName(u"widget_2")
+        self.verticalLayout_5 = QVBoxLayout(self.widget_2)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.verticalLayout_5.setContentsMargins(9, 9, 9, 9)
-        self.envio_msj = QLabel(self.widget_7)
+        self.label = QLabel(self.widget_2)
+        self.label.setObjectName(u"label")
+        self.label.setPixmap(QPixmap(u":/iconos/Iconos/check.svg"))
+
+        self.verticalLayout_5.addWidget(self.label)
+
+        self.label_2 = QLabel(self.widget_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setPixmap(QPixmap(u":/iconos/Iconos/check.svg"))
+
+        self.verticalLayout_5.addWidget(self.label_2)
+
+        self.label_6 = QLabel(self.widget_2)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setPixmap(QPixmap(u":/iconos/Iconos/check.svg"))
+
+        self.verticalLayout_5.addWidget(self.label_6)
+
+
+        self.horizontalLayout_5.addWidget(self.widget_2, 0, Qt.AlignLeft)
+
+        self.widget = QWidget(self.widget_7)
+        self.widget.setObjectName(u"widget")
+        sizePolicy4.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
+        self.widget.setSizePolicy(sizePolicy4)
+        self.verticalLayout_6 = QVBoxLayout(self.widget)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.envio_msj = QLabel(self.widget)
         self.envio_msj.setObjectName(u"envio_msj")
-        sizePolicy.setHeightForWidth(self.envio_msj.sizePolicy().hasHeightForWidth())
-        self.envio_msj.setSizePolicy(sizePolicy)
-        self.envio_msj.setMinimumSize(QSize(500, 30))
-        self.envio_msj.setMaximumSize(QSize(500, 30))
         font1 = QFont()
         font1.setFamilies([u"Garamond"])
-        font1.setPointSize(15)
+        font1.setPointSize(12)
+        font1.setBold(True)
         self.envio_msj.setFont(font1)
-        self.envio_msj.setContextMenuPolicy(Qt.NoContextMenu)
-        self.envio_msj.setScaledContents(False)
-        self.envio_msj.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.envio_msj.setTextInteractionFlags(Qt.LinksAccessibleByMouse)
 
-        self.verticalLayout_5.addWidget(self.envio_msj)
+        self.verticalLayout_6.addWidget(self.envio_msj)
 
-        self.conexion_label = QLabel(self.widget_7)
+        self.conexion_label = QLabel(self.widget)
         self.conexion_label.setObjectName(u"conexion_label")
-        self.conexion_label.setMaximumSize(QSize(300, 50))
         self.conexion_label.setFont(font1)
 
-        self.verticalLayout_5.addWidget(self.conexion_label)
+        self.verticalLayout_6.addWidget(self.conexion_label)
 
-        self.sesion_cerrada_label = QLabel(self.widget_7)
+        self.sesion_cerrada_label = QLabel(self.widget)
         self.sesion_cerrada_label.setObjectName(u"sesion_cerrada_label")
-        self.sesion_cerrada_label.setMaximumSize(QSize(300, 50))
         self.sesion_cerrada_label.setFont(font1)
 
-        self.verticalLayout_5.addWidget(self.sesion_cerrada_label)
+        self.verticalLayout_6.addWidget(self.sesion_cerrada_label)
 
-        self.progressBar = QProgressBar(self.widget_7)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setMaximumSize(QSize(0, 16777215))
-        self.progressBar.setValue(24)
 
-        self.verticalLayout_5.addWidget(self.progressBar)
+        self.horizontalLayout_5.addWidget(self.widget)
 
 
         self.verticalLayout_3.addWidget(self.widget_7, 0, Qt.AlignHCenter|Qt.AlignTop)
@@ -399,9 +417,12 @@ class Ui_MainWindow(object):
         self.boton2.setText(QCoreApplication.translate("MainWindow", u"Actividad Hosts", None))
         self.boton_gral.setText(QCoreApplication.translate("MainWindow", u"General", None))
         self.boton_particular.setText(QCoreApplication.translate("MainWindow", u"Particular", None))
-        self.envio_msj.setText(QCoreApplication.translate("MainWindow", u"LABEL1", None))
-        self.conexion_label.setText(QCoreApplication.translate("MainWindow", u"LABEL2", None))
-        self.sesion_cerrada_label.setText(QCoreApplication.translate("MainWindow", u"LABEL3", None))
+        self.label.setText("")
+        self.label_2.setText("")
+        self.label_6.setText("")
+        self.envio_msj.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.conexion_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.sesion_cerrada_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"PAGINA 2", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"PAGINA 3 ", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"PAGINA 4", None))
