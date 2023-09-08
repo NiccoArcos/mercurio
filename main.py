@@ -112,15 +112,6 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
             self.newWidth=0
 
 
-        #Contraccion barra de progreso
-        self.newHeight = 0
-        self.animacion = QPropertyAnimation(self.progressBar, b'maximumWidth')
-        self.animacion.setDuration(700)
-        self.animacion.setStartValue(self.newHeight)
-        self.animacion.setEndValue(self.width)
-        self.animacion.setEasingCurve(QEasingCurve.InOutQuart)
-        self.animacion.start()
-
         #Vincular la animacion de contraccion del menu general con los botones de prueba
         self.newHeight = 0
         self.animacion = QPropertyAnimation(self.botones_pruebas, b"maximumHeight")
@@ -152,17 +143,6 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
             self.newHeight = 0
 
 
-      #Contraer barra de progreso al contraer los botones de prueba diaria
-        self.newWidth = 0
-        self.animacion = QPropertyAnimation(self.progressBar, b'maximumWidth')
-        self.animacion.setDuration(700)
-        self.animacion.setStartValue(self.newWidth)
-        self.animacion.setEndValue(self.height)
-        self.animacion.setEasingCurve(QEasingCurve.InOutQuart)
-        self.animacion.start()
-
-
-
         #Animacion botones de prueba diaria (prueba general, particular)
         self.animacion = QPropertyAnimation(self.botones_pruebas, b"maximumHeight")
         # Animate minumWidth
@@ -176,13 +156,13 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
 
         self.width_widget7 = self.widget_7.width()
         if self.width_widget7 == 0:
-            self.newWidth_wiget7= 1000
+            self.newWidth_wiget7= 500
 
         else:
             self.newWidth_wiget7 = 0
 
 
-        self.animacion = QPropertyAnimation(self.widget_7, b"maximumWidth")
+        self.animacion = QPropertyAnimation(self.widget_7, b"minimumWidth")
         self.animacion.setDuration(500)
         self.animacion.setStartValue(self.width_widget7)
         self.animacion.setEndValue(self.newWidth_wiget7)
