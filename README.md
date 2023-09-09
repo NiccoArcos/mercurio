@@ -1,4 +1,4 @@
-# mercurio
+# Mercurio
 Aplicacion de escritorio en proceso de desarrollo que automatiza el envio de correos de buzones coorporativos, chequea los recursos de la infraestructura de exchange, chequea su disponibilidad y genera estadisticas de las pruebas realizadas.
 Tecnologias utilizadas: Python (PySide6), QtDesigner.
 
