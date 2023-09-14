@@ -11,8 +11,10 @@ from PyQt6.QtWidgets import QApplication
 from PyQt6.uic.uiparser import QtCore
 from PySide6.QtCore import *
 from PySide6.QtWidgets import QComboBox, QMenu
+from PyQt6.QtCore import QThread
 
-import Conexion
+import Envio
+from Conexion import Conexion
 from Envio import *
 
 import iconos
@@ -20,7 +22,22 @@ from ui_mercurio_prominente import *
 
 
 
-class VentanaPrincipal(QMainWindow, Ui_MainWindow):
+class HiloConexion(QObject):
+    signal = pyqtSignal(int)
+    def __init__(self):
+        super().__init__()
+
+    def run(self):
+        signal = 1
+        if Conexion._conexion is None:
+            print('Estableciendo conexion...')
+            Conexion.conexion()
+            Envio.envio()
+
+
+
+
+class VentanaPrincipal(QMainWindow,Ui_MainWindow):
 
     def __init__(self):
         super().__init__()
@@ -28,7 +45,7 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
 
         #Boton Menu control de eventos
         self.boton_menu.setCheckable(True)
-        self.boton_menu.clicked.connect(self.evento_checar)
+#        self.boton_menu.clicked.connect(self.evento_checar)
         self.boton_menu.clicked.connect(self.mover_menu)
 
         #Boton Prueba Diaria control de eventos
@@ -39,63 +56,31 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
         #Boton prueba general
         prueba = False
 
-        self.boton_gral.clicked.connect(lambda :self.mover_widet7(self.conexion()))
-        #self.boton_gral.released.connect(self.conexion)
         self.boton_gral.setCheckable(True)
-        self.boton_gral.clicked.connect(self.evento_checar)
+        self.boton_gral.clicked.connect(self.mover_widet7)
+        self.conexion_label.setText('Conexion establecida')
+        self.envio_msj.setText(f'Mensaje enviado con exito a:{Envio.destino}')
+        self.sesion_cerrada_label.setText(f'Sesion cerrada')
 
 
+        #HILO DE CONEXION Y ENVIO
+        self.thread = QThread()
+        self.worker = HiloConexion()
 
+        self.worker.moveToThread(self.thread)
 
-
-        #self.boton_gral.clicked.connect(self.mover_barra_progreso)
-
-
-
+        self.boton_gral.clicked.connect(self.worker.run)
+        #self.worker.finished.connect(self.thread.quit)
+#       self.worker.finished.connect(self.worker.deleteLater)
+        self.thread.finished.connect(self.thread.deleteLater)
+        self.thread.start()
 
         #Pagina 1 visualizacion de procesos
 
 
-    def conexion(self):
-
-
-        username = 'nicolas.arccos94@gmail.com'
-        password = 'lrvwutkoxzctbosb'
-        context = ssl.create_default_context()
-        _conexion = None
-
-        destino = 'nicolas.arccos94@gmail.com'
-        mensaje = 'puchito <3'
-
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(username, password)
-            print(f'Conexion establecida con exito')
-
-            self.envio_msj.setText(f'Conexion establecida con exito a:{destino}')
-
-            server.sendmail(username, destino, mensaje)
-
-            self.conexion_label.setText(f'Mensaje enviado con exito.')
-
-            print(f'Mensaje enviado a:{destino} con exito')
-            server.close()
-
-            self.sesion_cerrada_label.setText('Sesion cerrada con exito')
-            print(f'Sesion cerrada con exito.')
-            print(f'Accion finalizada con exito')
-
-
-    # Barra de progreso
-    def progress(self):
-        self.progressBar.minimum = 1
-        self.progressBar.maximum = 100
-        for i in range (1,101):
-            self.progressBar.setValue(i)
-
-
     def evento_checar(self,checar):
-        self.botonchecado = checar
-        print(f'Boton checado',self.botonchecado)
+         self.botonchecado = checar
+         print(f'Boton checado',self.botonchecado)
 
     def evento_checar_diaria(self,checar_diaria):
         self.boton_diaria_checado = checar_diaria
@@ -152,15 +137,14 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
         self.animacion.setEasingCurve(QEasingCurve.InOutQuart)
         self.animacion.start()
 
-    def mover_widet7(self,conexion):
 
+    def mover_widet7(self):
         self.width_widget7 = self.widget_7.width()
         if self.width_widget7 == 0:
-            self.newWidth_wiget7= 500
+            self.newWidth_wiget7 = 500
 
         else:
             self.newWidth_wiget7 = 0
-
 
         self.animacion = QPropertyAnimation(self.widget_7, b"minimumWidth")
         self.animacion.setDuration(500)
@@ -170,21 +154,6 @@ class VentanaPrincipal(QMainWindow, Ui_MainWindow):
         self.animacion.start()
 
 
-
-
-    def mover_barra_progreso(self):
-        self.width = self.progressBar.width()
-        if self.width == 0:
-            self.newWidth = 16777215
-        else:
-            self.newWidth = 0
-
-        self.animacion = QPropertyAnimation(self.progressBar, b"maximumWidth")
-        self.animacion.setDuration(5)
-        self.animacion.setStartValue(self.width)
-        self.animacion.setEndValue(self.newWidth)
-        self.animacion.setEasingCurve(QEasingCurve.InOutQuart)
-        self.animacion.start()
 
         self.boton1.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))
 
