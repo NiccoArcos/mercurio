@@ -8,7 +8,7 @@ from PySide6.QtCore import QThread
 
 class Conexion(QThread):
     username = 'nicolas.arccos94@gmail.com'
-    password = 'lrvwutkoxzctbosb'
+    password = "debe vincular una app password"
     context = ssl.create_default_context()
     _conexion = None
 
