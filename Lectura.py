@@ -10,7 +10,7 @@ import os
 
 class Lectura(Conexion):
     username = 'nicolas.arccos94@gmail.com'
-    password = 'mhmzvocbhqlsadzl'
+    password = 'debe introducir un app password'
 
     @classmethod
     def lectura(cls):
