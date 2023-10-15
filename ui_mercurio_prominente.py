@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaztyAyNR.ui'
+## Form generated from reading UI file 'interfazppxmOp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -19,8 +19,8 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QMainWindow, QProgressBar,
     QPushButton, QSizePolicy, QStackedWidget, QVBoxLayout,
     QWidget)
-import imagenes_rc
-import iconos_rc
+import imagenes
+import iconos
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -740,6 +740,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.pagina4)
         self.pagina2 = QWidget()
         self.pagina2.setObjectName(u"pagina2")
+        self.pagina2.setMinimumSize(QSize(0, 557))
         self.verticalLayout_8 = QVBoxLayout(self.pagina2)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.frame_7 = QFrame(self.pagina2)
@@ -811,8 +812,8 @@ class Ui_MainWindow(object):
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setFrameShape(QFrame.StyledPanel)
         self.frame_11.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_31 = QVBoxLayout(self.frame_11)
-        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.verticalLayout_23 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.frame_ori_perso_5 = QFrame(self.frame_11)
         self.frame_ori_perso_5.setObjectName(u"frame_ori_perso_5")
         sizePolicy8 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
@@ -843,14 +844,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout_21.addWidget(self.label_101)
 
 
-        self.verticalLayout_31.addWidget(self.frame_ori_perso_5)
+        self.verticalLayout_23.addWidget(self.frame_ori_perso_5)
 
-        self.comboBox_24 = QComboBox(self.frame_11)
-        self.comboBox_24.addItem("")
-        self.comboBox_24.addItem("")
-        self.comboBox_24.setObjectName(u"comboBox_24")
+        self.combo_origen_ext = QComboBox(self.frame_11)
+        self.combo_origen_ext.addItem("")
+        self.combo_origen_ext.addItem("")
+        self.combo_origen_ext.setObjectName(u"combo_origen_ext")
 
-        self.verticalLayout_31.addWidget(self.comboBox_24, 0, Qt.AlignTop)
+        self.verticalLayout_23.addWidget(self.combo_origen_ext)
+
+        self.ruta_origen_ext = QPushButton(self.frame_11)
+        self.ruta_origen_ext.setObjectName(u"ruta_origen_ext")
+        font7 = QFont()
+        font7.setBold(True)
+        self.ruta_origen_ext.setFont(font7)
+        self.ruta_origen_ext.setIcon(icon9)
+
+        self.verticalLayout_23.addWidget(self.ruta_origen_ext)
 
 
         self.verticalLayout_10.addWidget(self.frame_11, 0, Qt.AlignTop)
@@ -895,20 +905,27 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_19.addWidget(self.frame_ori_lcl_4)
 
-        self.comboBox_2 = QComboBox(self.frame_16)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        sizePolicy8.setHeightForWidth(self.comboBox_2.sizePolicy().hasHeightForWidth())
-        self.comboBox_2.setSizePolicy(sizePolicy8)
+        self.combo_origen_loc = QComboBox(self.frame_16)
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.addItem("")
+        self.combo_origen_loc.setObjectName(u"combo_origen_loc")
+        sizePolicy8.setHeightForWidth(self.combo_origen_loc.sizePolicy().hasHeightForWidth())
+        self.combo_origen_loc.setSizePolicy(sizePolicy8)
 
-        self.verticalLayout_19.addWidget(self.comboBox_2)
+        self.verticalLayout_19.addWidget(self.combo_origen_loc)
+
+        self.ruta_origen_loc = QPushButton(self.frame_16)
+        self.ruta_origen_loc.setObjectName(u"ruta_origen_loc")
+        self.ruta_origen_loc.setFont(font7)
+        self.ruta_origen_loc.setIcon(icon9)
+
+        self.verticalLayout_19.addWidget(self.ruta_origen_loc)
 
 
         self.verticalLayout_10.addWidget(self.frame_16, 0, Qt.AlignTop)
@@ -950,15 +967,22 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.frame_ori_nub_4)
 
-        self.comboBox_9 = QComboBox(self.frame_25)
-        self.comboBox_9.addItem("")
-        self.comboBox_9.addItem("")
-        self.comboBox_9.addItem("")
-        self.comboBox_9.setObjectName(u"comboBox_9")
-        sizePolicy8.setHeightForWidth(self.comboBox_9.sizePolicy().hasHeightForWidth())
-        self.comboBox_9.setSizePolicy(sizePolicy8)
+        self.combo_origen_nub = QComboBox(self.frame_25)
+        self.combo_origen_nub.addItem("")
+        self.combo_origen_nub.addItem("")
+        self.combo_origen_nub.addItem("")
+        self.combo_origen_nub.setObjectName(u"combo_origen_nub")
+        sizePolicy8.setHeightForWidth(self.combo_origen_nub.sizePolicy().hasHeightForWidth())
+        self.combo_origen_nub.setSizePolicy(sizePolicy8)
 
-        self.verticalLayout_28.addWidget(self.comboBox_9, 0, Qt.AlignTop)
+        self.verticalLayout_28.addWidget(self.combo_origen_nub, 0, Qt.AlignTop)
+
+        self.ruta_origen_nub = QPushButton(self.frame_25)
+        self.ruta_origen_nub.setObjectName(u"ruta_origen_nub")
+        self.ruta_origen_nub.setFont(font7)
+        self.ruta_origen_nub.setIcon(icon9)
+
+        self.verticalLayout_28.addWidget(self.ruta_origen_nub)
 
 
         self.verticalLayout_10.addWidget(self.frame_25, 0, Qt.AlignTop)
@@ -1168,19 +1192,29 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.stackedWidget_2 = QStackedWidget(self.clm_icons)
         self.stackedWidget_2.setObjectName(u"stackedWidget_2")
-        self.stackedWidget_2.setMaximumSize(QSize(16777215, 500))
+        self.stackedWidget_2.setMinimumSize(QSize(0, 0))
+        self.stackedWidget_2.setMaximumSize(QSize(1000, 500))
         self.page_2_1 = QWidget()
         self.page_2_1.setObjectName(u"page_2_1")
+        self.page_2_1.setMinimumSize(QSize(0, 0))
+        self.page_2_1.setMaximumSize(QSize(0, 16777215))
+        self.page_2_1.setStyleSheet(u"")
         self.verticalLayout_15 = QVBoxLayout(self.page_2_1)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.origen_externo = QFrame(self.page_2_1)
         self.origen_externo.setObjectName(u"origen_externo")
         sizePolicy4.setHeightForWidth(self.origen_externo.sizePolicy().hasHeightForWidth())
         self.origen_externo.setSizePolicy(sizePolicy4)
-        self.origen_externo.setMaximumSize(QSize(16777215, 8000))
-        self.origen_externo.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"	border-radius: 20px;\n"
-"")
+        self.origen_externo.setMinimumSize(QSize(80, 80))
+        self.origen_externo.setMaximumSize(QSize(1000, 8000))
+        self.origen_externo.setStyleSheet(u"#origen_externo{\n"
+"\n"
+"border: solid #8f8f91;\n"
+"    border-radius: 20px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #fcc253 stop: 1 #ddebdd);\n"
+"    min-width: 80px;\n"
+"}")
         self.origen_externo.setFrameShape(QFrame.StyledPanel)
         self.origen_externo.setFrameShadow(QFrame.Raised)
         self.verticalLayout_14 = QVBoxLayout(self.origen_externo)
@@ -1199,6 +1233,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_45.setObjectName(u"verticalLayout_45")
         self.label_67 = QLabel(self.frame_50)
         self.label_67.setObjectName(u"label_67")
+        self.label_67.setStyleSheet(u"")
         self.label_67.setPixmap(QPixmap(u":/iconos/Iconos/arrow-down-right.svg"))
 
         self.verticalLayout_45.addWidget(self.label_67, 0, Qt.AlignLeft)
@@ -1337,16 +1372,24 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.addWidget(self.page_2_1)
         self.page_2_3 = QWidget()
         self.page_2_3.setObjectName(u"page_2_3")
+        self.page_2_3.setMaximumSize(QSize(0, 16777215))
+        self.page_2_3.setStyleSheet(u"background-image: url(:/imagenes/imgQuienes1.png);")
         self.verticalLayout_13 = QVBoxLayout(self.page_2_3)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.origen_local = QFrame(self.page_2_3)
         self.origen_local.setObjectName(u"origen_local")
         sizePolicy4.setHeightForWidth(self.origen_local.sizePolicy().hasHeightForWidth())
         self.origen_local.setSizePolicy(sizePolicy4)
-        self.origen_local.setMinimumSize(QSize(264, 405))
-        self.origen_local.setMaximumSize(QSize(264, 405))
-        self.origen_local.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"	border-radius: 20px;")
+        self.origen_local.setMinimumSize(QSize(80, 0))
+        self.origen_local.setMaximumSize(QSize(16777215, 16777215))
+        self.origen_local.setStyleSheet(u"#origen_local{\n"
+"\n"
+"border: solid #8f8f91;\n"
+"    border-radius: 20px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #fcc253 stop: 1 #ddebdd);\n"
+"    min-width: 80px;\n"
+"}")
         self.origen_local.setFrameShape(QFrame.StyledPanel)
         self.origen_local.setFrameShadow(QFrame.Raised)
         self.verticalLayout_37 = QVBoxLayout(self.origen_local)
@@ -1504,15 +1547,21 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.addWidget(self.page_2_3)
         self.page_2_2 = QWidget()
         self.page_2_2.setObjectName(u"page_2_2")
+        self.page_2_2.setMaximumSize(QSize(0, 16777215))
         self.horizontalLayout_9 = QHBoxLayout(self.page_2_2)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.origen_nube = QFrame(self.page_2_2)
         self.origen_nube.setObjectName(u"origen_nube")
         sizePolicy4.setHeightForWidth(self.origen_nube.sizePolicy().hasHeightForWidth())
         self.origen_nube.setSizePolicy(sizePolicy4)
-        self.origen_nube.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"	border-radius: 20px;\n"
-"")
+        self.origen_nube.setStyleSheet(u"#origen_nube{\n"
+"\n"
+"border: solid #8f8f91;\n"
+"    border-radius: 20px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #fcc253 stop: 1 #ddebdd);\n"
+"    min-width: 80px;\n"
+"}")
         self.origen_nube.setFrameShape(QFrame.StyledPanel)
         self.origen_nube.setFrameShadow(QFrame.Raised)
         self.verticalLayout_26 = QVBoxLayout(self.origen_nube)
@@ -1706,7 +1755,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1751,28 +1800,31 @@ class Ui_MainWindow(object):
         self.label_43.setText("")
         self.label_100.setText(QCoreApplication.translate("MainWindow", u"Origen Externo", None))
         self.label_101.setText("")
-        self.comboBox_24.setItemText(0, "")
-        self.comboBox_24.setItemText(1, QCoreApplication.translate("MainWindow", u"dcmonitoreo7x24@gmail.com", None))
+        self.combo_origen_ext.setItemText(0, "")
+        self.combo_origen_ext.setItemText(1, QCoreApplication.translate("MainWindow", u"dcmonitoreo7x24@gmail.com", None))
 
+        self.ruta_origen_ext.setText(QCoreApplication.translate("MainWindow", u"Ruta de Envio", None))
         self.label_21.setText("")
         self.label_41.setText(QCoreApplication.translate("MainWindow", u"Origen Local", None))
         self.label_42.setText("")
-        self.comboBox_2.setItemText(0, "")
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"TestLocalPromi", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"TestLocalEMV", None))
-        self.comboBox_2.setItemText(3, QCoreApplication.translate("MainWindow", u"TestLocalBRT", None))
-        self.comboBox_2.setItemText(4, QCoreApplication.translate("MainWindow", u"TestLocalBRA", None))
-        self.comboBox_2.setItemText(5, QCoreApplication.translate("MainWindow", u"TestLocalBRH", None))
-        self.comboBox_2.setItemText(6, QCoreApplication.translate("MainWindow", u"TestLocalMTV", None))
-        self.comboBox_2.setItemText(7, QCoreApplication.translate("MainWindow", u"TestLocalBRF", None))
+        self.combo_origen_loc.setItemText(0, "")
+        self.combo_origen_loc.setItemText(1, QCoreApplication.translate("MainWindow", u"TestLocalPromi", None))
+        self.combo_origen_loc.setItemText(2, QCoreApplication.translate("MainWindow", u"TestLocalEMV", None))
+        self.combo_origen_loc.setItemText(3, QCoreApplication.translate("MainWindow", u"TestLocalBRT", None))
+        self.combo_origen_loc.setItemText(4, QCoreApplication.translate("MainWindow", u"TestLocalBRA", None))
+        self.combo_origen_loc.setItemText(5, QCoreApplication.translate("MainWindow", u"TestLocalBRH", None))
+        self.combo_origen_loc.setItemText(6, QCoreApplication.translate("MainWindow", u"TestLocalMTV", None))
+        self.combo_origen_loc.setItemText(7, QCoreApplication.translate("MainWindow", u"TestLocalBRF", None))
 
+        self.ruta_origen_loc.setText(QCoreApplication.translate("MainWindow", u"Ruta de Envio", None))
         self.label_44.setText("")
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"Origen Nube", None))
         self.label_46.setText("")
-        self.comboBox_9.setItemText(0, "")
-        self.comboBox_9.setItemText(1, QCoreApplication.translate("MainWindow", u"Test365Promi", None))
-        self.comboBox_9.setItemText(2, QCoreApplication.translate("MainWindow", u"Test365EMV", None))
+        self.combo_origen_nub.setItemText(0, "")
+        self.combo_origen_nub.setItemText(1, QCoreApplication.translate("MainWindow", u"Test365Promi", None))
+        self.combo_origen_nub.setItemText(2, QCoreApplication.translate("MainWindow", u"Test365EMV", None))
 
+        self.ruta_origen_nub.setText(QCoreApplication.translate("MainWindow", u"Ruta de Envio", None))
         self.label_23.setText("")
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Destino Local", None))
         self.label_25.setText("")
@@ -1799,7 +1851,7 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(2, QCoreApplication.translate("MainWindow", u"Test365Promi", None))
 
         self.pushButton_39.setText(QCoreApplication.translate("MainWindow", u"Ejecutar", None))
-        self.pushButton_40.setText(QCoreApplication.translate("MainWindow", u"Informacion", None))
+        self.pushButton_40.setText(QCoreApplication.translate("MainWindow", u"Informacion General", None))
         self.pushButton_41.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_67.setText("")
         self.label_30.setText("")
