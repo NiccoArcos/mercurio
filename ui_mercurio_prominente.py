@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfazppxmOp.ui'
+## Form generated from reading UI file 'interfazpDoJHa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QMainWindow, QProgressBar,
     QPushButton, QSizePolicy, QStackedWidget, QVBoxLayout,
     QWidget)
+
 import imagenes
 import iconos
 
@@ -271,7 +272,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.menu_lateral.sizePolicy().hasHeightForWidth())
         self.menu_lateral.setSizePolicy(sizePolicy2)
         self.menu_lateral.setMinimumSize(QSize(0, 450))
-        self.menu_lateral.setMaximumSize(QSize(0, 16777215))
+        self.menu_lateral.setMaximumSize(QSize(150, 16777215))
         self.menu_lateral.setFrameShape(QFrame.StyledPanel)
         self.menu_lateral.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.menu_lateral)
@@ -383,7 +384,8 @@ class Ui_MainWindow(object):
         sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.frame_btns_cabecera_custom_1.sizePolicy().hasHeightForWidth())
         self.frame_btns_cabecera_custom_1.setSizePolicy(sizePolicy5)
-        self.frame_btns_cabecera_custom_1.setMaximumSize(QSize(0, 16777215))
+        self.frame_btns_cabecera_custom_1.setMinimumSize(QSize(0, 0))
+        self.frame_btns_cabecera_custom_1.setMaximumSize(QSize(1000, 16777215))
         self.frame_btns_cabecera_custom_1.setFrameShape(QFrame.StyledPanel)
         self.frame_btns_cabecera_custom_1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_35 = QHBoxLayout(self.frame_btns_cabecera_custom_1)
@@ -419,6 +421,7 @@ class Ui_MainWindow(object):
         self.columnas_custom_1.setObjectName(u"columnas_custom_1")
         sizePolicy1.setHeightForWidth(self.columnas_custom_1.sizePolicy().hasHeightForWidth())
         self.columnas_custom_1.setSizePolicy(sizePolicy1)
+        self.columnas_custom_1.setMinimumSize(QSize(0, 0))
         self.columnas_custom_1.setMaximumSize(QSize(16777215, 0))
         self.columnas_custom_1.setFrameShape(QFrame.StyledPanel)
         self.columnas_custom_1.setFrameShadow(QFrame.Raised)
